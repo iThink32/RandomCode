@@ -12,8 +12,8 @@ Random Code:-
         reqdTextField.becomeFirstResponder()
     }
 
-    class func stringMatches(text:String,negatedRegex:String) -> [NSTextCheckingResult]? {
-        guard let regExpression = try? NSRegularExpression(pattern: negatedRegex, options: NSRegularExpression.Options.caseInsensitive) else {
+    class func stringMatches(text:String,regex:String) -> [NSTextCheckingResult]? {
+        guard let regExpression = try? NSRegularExpression(pattern: regex, options: NSRegularExpression.Options.caseInsensitive) else {
             return nil
         }
         let matches = regExpression.matches(in: text, options: [], range: NSRange(location: 0, length: text.count))
