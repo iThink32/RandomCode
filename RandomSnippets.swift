@@ -41,7 +41,7 @@ eg:-
         })
     }
 
-The most deadly multipart image upload (wink)
+The most deadly multipart image upload (wink)(took a long time to make this work)
     
     func uploadImage(image:UIImage,callBack:@escaping APITypealias<String>.UploadImageCallBack) {
         PKHUD.sharedHUD.show()
