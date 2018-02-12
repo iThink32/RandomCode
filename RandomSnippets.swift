@@ -12,3 +12,14 @@ Random Code:-
         reqdTextField.becomeFirstResponder()
     }
 
+    class func stringMatches(text:String,negatedRegex:String) -> [NSTextCheckingResult]? {
+        guard let regExpression = try? NSRegularExpression(pattern: negatedRegex, options: NSRegularExpression.Options.caseInsensitive) else {
+            return nil
+        }
+        let matches = regExpression.matches(in: text, options: [], range: NSRange(location: 0, length: text.count))
+        let arrReqdmatches = matches.filter { (match) -> Bool in
+            return match.range.length > 0
+        }
+        return arrReqdmatches
+    }
+
