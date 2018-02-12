@@ -71,8 +71,11 @@ The most deadly multipart image upload (wink)
                             forHTTPHeaderField: "Content-Type")
         var tempData = Data()
         
-        guard let startBoundary = "--\(boundary)\r\n".data(using: String.Encoding.utf8),let contentDispositionFile = "Content-Disposition: form-data; name=\"file\"; filename=\"image.png\"\r\n".data(using: String.Encoding.utf8),let contentDispositionType = "Content-Disposition: form-data; name=\"type\"\r\n\r\nProfileImage\r\n".data(using: String.Encoding.utf8),let contentType = "Content-Type: image/png\r\n\r\n".data(using: String.Encoding.utf8),let padding = "\r\n".data(using: String.Encoding.utf8),
-            let endBoundary = "--\(boundary)--\r\n".data(using: String.Encoding.utf8) else{
+        guard let startBoundary = "--\(boundary)\r\n".data(using: String.Encoding.utf8),
+        let contentDispositionFile = "Content-Disposition: form-data; name=\"file\"; filename=\"image.png\"\r\n".data(using: String.Encoding.utf8),
+        let contentDispositionType = "Content-Disposition: form-data; name=\"type\"\r\n\r\nProfileImage\r\n".data(using: String.Encoding.utf8),
+        let contentType = "Content-Type: image/png\r\n\r\n".data(using: String.Encoding.utf8),let padding = "\r\n".data(using: String.Encoding.utf8),
+        let endBoundary = "--\(boundary)--\r\n".data(using: String.Encoding.utf8) else{
                 return
         }
         
